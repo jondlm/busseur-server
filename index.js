@@ -41,6 +41,9 @@ server.route([{
     validate: {
       query: {
         locIDs: Joi.number().integer()
+      },
+      options: {
+        presence: 'required'
       }
     }
   }
