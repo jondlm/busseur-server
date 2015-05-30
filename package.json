@@ -1,6 +1,6 @@
 {
   "name": "busseur-server",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A small server for the busseur command line tool",
   "main": "index.js",
   "repository": {
