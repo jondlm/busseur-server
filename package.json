@@ -3,6 +3,13 @@
   "version": "0.0.3",
   "description": "A small server for the busseur command line tool",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jondlm/busseur-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jondlm/busseur-server/issues"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index | bunyan -o short"
@@ -13,6 +20,7 @@
     "boom": "^2.7.2",
     "bunyan": "^1.3.5",
     "hapi": "^8.5.1",
-    "joi": "^6.4.2"
+    "joi": "^6.4.2",
+    "rx-http": "0.0.3"
   }
 }
