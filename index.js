@@ -14,6 +14,7 @@ var Boom    = require('boom');
 // -------------------------------------
 var BASE_URL = 'http://developer.trimet.org/ws/v2/arrivals'; // http://developer.trimet.org/ws_docs/arrivals2_ws.shtml
 var APP_ID = process.env.APP_ID;
+var PORT = process.env.PORT || 3000;
 
 if (!APP_ID) {
   console.error('APP_ID environment variable missing, please set it');
@@ -24,7 +25,7 @@ if (!APP_ID) {
 // Server
 // -------------------------------------
 var server = new Hapi.Server();
-server.connection({ port: 3000 });
+server.connection({ port: PORT });
 
 //
 // Routes
