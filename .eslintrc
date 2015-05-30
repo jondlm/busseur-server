@@ -9,6 +9,7 @@
   "rules": {
     "quotes": [1, "single"],
     "comma-dangle": true,
-    "no-multi-spaces": false
+    "no-multi-spaces": false,
+    "no-process-exit": false
   }
 }

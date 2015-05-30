@@ -6,7 +6,6 @@
 var Hapi    = require('hapi');
 var Joi     = require('joi');
 var log     = require('./util/log');
-var secrets = require('./secrets');
 var rxHttp  = require('rx-http');
 var Boom    = require('boom');
 
@@ -14,6 +13,12 @@ var Boom    = require('boom');
 // Constants
 // -------------------------------------
 var BASE_URL = 'http://developer.trimet.org/ws/v2/arrivals'; // http://developer.trimet.org/ws_docs/arrivals2_ws.shtml
+var APP_ID = process.env.APP_ID;
+
+if (!APP_ID) {
+  console.error('APP_ID environment variable missing, please set it');
+  process.exit(1);
+}
 
 //
 // Server
@@ -30,7 +35,7 @@ server.route([{
   handler: function(req, reply) {
     var qs = {
       locIDs: req.query.locIDs,
-      appID: secrets.appId
+      appID: APP_ID
     };
 
     rxHttp.getJson$(BASE_URL, qs).subscribe(reply, function(err) {

@@ -6,19 +6,11 @@ endpoints provided by the [TriMet api][api].
 
 ## Usage
 
-Create a file called `secret.js` and put the following contents in it:
-
-```
-module.exports = {
-  appId: 'your app token goes here'
-};
-
-```
-
-Make sure you [sign up][id] for your own `appId` and swap it in. Then you can
-run the following commands to get things running:
+**Make sure** you have an `APP_ID` environment variables set with your trimet api
+key the can be obtained on [their website][id]. To start the server:
 
 ```bash
+export APP_ID=123
 npm install
 npm start
 ```
