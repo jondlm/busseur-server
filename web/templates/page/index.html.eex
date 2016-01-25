@@ -1,0 +1,22 @@
+<h1 class="bs-title">Busseur</h1>
+<div class="bs-subtitle">a simplified Portland TriMet arrivals app</div>
+
+<form class="pure-form pure-form-aligned" action="/arrivals" method="GET">
+  <fieldset>
+    <input class="pure-input-1" type="number" pattern="[0-9]*" inputmode="numberic" name="stop" placeholder="Stop ID" required />
+  </fieldset>
+
+  <fieldset>
+    <input class="pure-input-1" type="number" pattern="[0-9]*" inputmode="numberic" name="route" placeholder="Route (optional)" />
+  </fieldset>
+
+  <button class="pure-button pure-input-1 pure-button-primary" type="submit">Show Arrivals</button>
+</form>
+
+<footer class="bs-footer">
+  <ul class="bs-footer-nav">
+    <li><a href="https://www.github.com/jondlm">GitHub</a></li>
+    <li><a href="https://www.twitter.com/jondelamotte">♥︎ Jon de la Motte</a></li>
+  </ul>
+</footer>
+

@@ -1,0 +1,144 @@
+$red: #A9443F;
+$green: #3c763d;
+$blue: #31708f;
+$light-blue: #3D92C9;
+
+$site-max-width: 480px;
+
+$footer-height: 50px;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0 0 $footer-height;
+}
+
+.bs-container {
+  padding: 0 10px;
+  margin: 0 auto 100px auto;
+  max-width: $site-max-width;
+}
+
+.bs-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.bs-subtitle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bs-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: $footer-height;
+  width: 100%;
+  font-size: 0.8em;
+
+  .bs-footer-nav {
+    max-width: $site-max-width;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+
+    a {
+      text-decoration: none;
+      color: $light-blue;
+    }
+  }
+}
+
+.bs-well-error,
+.bs-well-info {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.bs-well-error {
+  color: $red;
+  border: $red;
+  background: lighten($red, 40%);
+}
+
+.bs-well-info {
+  color: $blue;
+  border: $blue;
+  background: lighten($blue, 40%);
+}
+
+.bs-list {
+  list-style: none;
+  padding: 0;
+
+  .bs-list-item {
+    border: 1px solid #ddd;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+
+    &:first-child {
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid #ddd;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    .bs-list-item-box {
+      text-align: center;
+      padding: 10px 0;
+      flex-grow: 1;
+
+      &:first-child {
+        text-align: left;
+        padding-left: 10px;
+        flex-grow: 0;
+        min-width: 115px;
+      }
+
+      &:last-child {
+        text-align: right;
+        padding-right: 10px;
+        flex-grow: 0;
+      }
+
+      &.bs-list-item-box-ontime {
+        font-size: 0.8em;
+        color: $green;
+        // background-color: lighten($green, 40%);
+      }
+
+      &.bs-list-item-box-late {
+        font-size: 0.8em;
+        color: $red;
+        // background-color: lighten($red, 40%);
+      }
+
+      .bs-list-item-box-content {
+        font-size: 1.3em;
+      }
+
+      .bs-list-item-box-label {
+        font-size: 0.6em;
+        color: #aaa;
+      }
+    }
+  }
+}
+
+
+
+
+
+

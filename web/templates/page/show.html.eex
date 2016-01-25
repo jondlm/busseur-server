@@ -1,0 +1,37 @@
+<h1><%= extract_location(@response) %></h1>
+
+<p>
+  Refreshed at <%= Timex.Date.local |> Timex.DateFormat.format!("%H:%M", :strftime) %>
+</p>
+
+<%= if is_list(extract_arrivals(@response)) do %>
+  <ul class="bs-list">
+  <%= for arrival <- extract_arrivals(@response) do %>
+    <li class="bs-list-item">
+      <div class="bs-list-item-box">
+        <div class="bs-list-item-box-content">
+          <%= arrival[:estimated] || arrival[:scheduled] || "N/A" %>
+        </div>
+        <div class="bs-list-item-box-label test">
+          Estimate
+        </div>
+      </div>
+
+      <!-- Potential placeholder for future data -->
+      <div class="bs-list-item-box"></div>
+
+      <div class="bs-list-item-box">
+        <div class="bs-list-item-box-content">
+          <%= arrival["route"] %>
+        </div>
+        <div class="bs-list-item-box-label">
+          Route
+        </div>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+<% else %>
+  <p><%= extract_arrivals(@response) %></p>
+<% end %>
+
