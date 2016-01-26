@@ -20,9 +20,3 @@ import "deps/phoenix_html/web/static/js/phoenix_html"
 
 // import socket from "./socket"
 
-// Refresh every 30 seconds
-setInterval(function() {
-  if (location && location.reload) {
-    location.reload();
-  }
-}, 30000);

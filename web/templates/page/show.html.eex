@@ -1,3 +1,12 @@
+<script>
+// Refresh every 30 seconds
+setInterval(function() {
+  if (location && location.reload) {
+    location.reload();
+  }
+}, 30000);
+</script>
+
 <h1><%= extract_location(@response) %></h1>
 
 <p>
