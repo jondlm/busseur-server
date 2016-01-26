@@ -1,6 +1,6 @@
 # Busseur Server
 
-Check out [jdelamotte.busseur.com][jd] for a live example.
+Check out [busseur.jondelamotte.com][jd] for a live example.
 
 This small server was written to accompany the [busseur][busseur] command line
 tool for Portland TriMet bus arrivals. It's a thin wrapper around the [TriMet
@@ -33,4 +33,4 @@ docker run -d -p 4000:80 -e "APP_ID=1234" busseur-server
 [api]: http://developer.trimet.org/ws_docs/
 [id]: http://developer.trimet.org/appid/registration/
 [busseur]: https://github.com/jondlm/busseur/
-[jd]: http://busseur.jdelamotte.com/
+[jd]: http://busseur.jondelamotte.com/
