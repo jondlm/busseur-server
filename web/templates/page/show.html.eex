@@ -22,7 +22,11 @@ setInterval(function() {
           <%= arrival[:estimated] || arrival[:scheduled] || "N/A" %>
         </div>
         <div class="bs-list-item-box-label test">
-          Estimate
+          <%= if arrival[:estimated] do %>
+            Estimate (<%= arrival[:scheduled] %> scheduled)
+          <% else %>
+            Scheduled
+          <% end %>
         </div>
       </div>
 
