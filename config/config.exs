@@ -8,9 +8,8 @@ use Mix.Config
 # Configures the endpoint
 config :busseur_server, BusseurServer.Endpoint,
   url: [host: "localhost"],
-  root: Path.dirname(__DIR__),
-  secret_key_base: "YdfG7VpLOup1Y9BR0kUHXKhnHUifWaAs0Pxnbvf+9NJ6TFmrphTU05YyLuphZQgA",
-  render_errors: [accepts: ~w(html json)],
+  secret_key_base: "3wuSBtBKXmSU0vVrTNm13QQ5MhLCp4bzrVIWdfDmRFWIy/t93xkePHB2gFNvGaxJ",
+  render_errors: [view: BusseurServer.ErrorView, accepts: ~w(html json)],
   pubsub: [name: BusseurServer.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
@@ -22,8 +21,3 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
-
-# Configure phoenix generators
-config :phoenix, :generators,
-  migration: true,
-  binary_id: false

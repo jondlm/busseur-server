@@ -4,8 +4,6 @@ defmodule BusseurServer.Trimet do
     case System.get_env("APP_ID") do
       app_id ->
         "http://developer.trimet.org/ws/v2/arrivals?appID=#{app_id}&locIDs=#{loc_ids}"
-      _ ->
-        # Danger!
     end
   end
 

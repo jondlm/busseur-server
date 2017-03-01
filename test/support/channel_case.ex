@@ -4,7 +4,7 @@ defmodule BusseurServer.ChannelCase do
   channel tests.
 
   Such tests rely on `Phoenix.ChannelTest` and also
-  imports other functionality to make it easier
+  import other functionality to make it easier
   to build and query models.
 
   Finally, if the test case interacts with the database,
@@ -20,10 +20,6 @@ defmodule BusseurServer.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias BusseurServer.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
-
 
       # The default endpoint for testing
       @endpoint BusseurServer.Endpoint
@@ -31,9 +27,6 @@ defmodule BusseurServer.ChannelCase do
   end
 
   setup tags do
-    unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(BusseurServer.Repo, [])
-    end
 
     :ok
   end

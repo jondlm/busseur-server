@@ -4,7 +4,7 @@ defmodule BusseurServer.PageView do
   defp msec_to_date(milliseconds) do
     case milliseconds do
       s when is_number(s) ->
-        {:ok, Timex.Date.from(s / 1000, :secs)}
+        {:ok, DateTime.from_unix!(div(s, 1000))}
       _ ->
         {:error, "Could not format date"}
     end
@@ -13,7 +13,7 @@ defmodule BusseurServer.PageView do
   defp from_now(milliseconds) do
     case msec_to_date(milliseconds) do
       {:ok, date} ->
-        case Timex.Date.diff(Timex.Date.now, date, :mins) do
+        case Timex.Comparable.diff(date, DateTime.utc_now(), :minutes) do
           m when div(m, 60) > 0 ->
             "#{div(m, 60)} hr #{rem(m, 60)} min"
           m ->

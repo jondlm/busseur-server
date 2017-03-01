@@ -10,7 +10,7 @@ setInterval(function() {
 <h1><%= extract_location(@response) %></h1>
 
 <p>
-  Refreshed at <%= Timex.Date.local |> Timex.DateFormat.format!("%H:%M", :strftime) %>
+  Refreshed at <%= DateTime.utc_now() |> Timex.Format.DateTime.Formatter.format!("%H:%M", Timex.Format.DateTime.Formatters.Strftime) %>
 </p>
 
 <%= if is_list(extract_arrivals(@response)) do %>
@@ -47,4 +47,3 @@ setInterval(function() {
 <% else %>
   <p><%= extract_arrivals(@response) %></p>
 <% end %>
-

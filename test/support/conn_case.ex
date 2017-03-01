@@ -4,7 +4,7 @@ defmodule BusseurServer.ConnCase do
   tests that require setting up a connection.
 
   Such tests rely on `Phoenix.ConnTest` and also
-  imports other functionality to make it easier
+  import other functionality to make it easier
   to build and query models.
 
   Finally, if the test case interacts with the database,
@@ -20,10 +20,6 @@ defmodule BusseurServer.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias BusseurServer.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
-
       import BusseurServer.Router.Helpers
 
       # The default endpoint for testing
@@ -32,10 +28,7 @@ defmodule BusseurServer.ConnCase do
   end
 
   setup tags do
-    unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(BusseurServer.Repo, [])
-    end
 
-    {:ok, conn: Phoenix.ConnTest.conn()}
+    {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end

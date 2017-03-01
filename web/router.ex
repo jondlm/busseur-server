@@ -14,7 +14,7 @@ defmodule BusseurServer.Router do
   end
 
   scope "/", BusseurServer do
-    pipe_through :browser
+    pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
     get "/arrivals", PageController, :show

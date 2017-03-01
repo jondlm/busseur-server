@@ -8,18 +8,13 @@
     <meta name="author" content="Jon de la Motte">
 
     <title>Busseur</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/pure.css") %>">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
-
-    <!--
-    <header class="pure-menu pure-menu-horizontal pure-menu-right">
-        <a href="/" class="pure-menu-heading pure-menu-link">Busseur</a>
-    </header>
-    -->
-
     <div class="bs-container">
+
       <%= if get_flash(@conn, :info) do %>
         <div class="bs-well-info"><%= get_flash(@conn, :info) %></div>
       <% end %>
@@ -28,7 +23,10 @@
         <div class="bs-well-error"><%= get_flash(@conn, :error) %></div>
       <% end %>
 
-      <%= @inner %>
+      <main role="main">
+        <%= render @view_module, @view_template, assigns %>
+      </main>
+
     </div>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>

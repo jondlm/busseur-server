@@ -8,12 +8,3 @@ config :busseur_server, BusseurServer.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
-
-# Configure your database
-config :busseur_server, BusseurServer.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "busseur_server_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox

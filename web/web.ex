@@ -18,10 +18,7 @@ defmodule BusseurServer.Web do
 
   def model do
     quote do
-      use Ecto.Model
-
-      import Ecto.Changeset
-      import Ecto.Query, only: [from: 1, from: 2]
+      # Define common model functionality
     end
   end
 
@@ -29,11 +26,8 @@ defmodule BusseurServer.Web do
     quote do
       use Phoenix.Controller
 
-      alias BusseurServer.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 1, from: 2]
-
       import BusseurServer.Router.Helpers
+      import BusseurServer.Gettext
     end
   end
 
@@ -48,6 +42,8 @@ defmodule BusseurServer.Web do
       use Phoenix.HTML
 
       import BusseurServer.Router.Helpers
+      import BusseurServer.ErrorHelpers
+      import BusseurServer.Gettext
     end
   end
 
@@ -60,10 +56,7 @@ defmodule BusseurServer.Web do
   def channel do
     quote do
       use Phoenix.Channel
-
-      alias BusseurServer.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 1, from: 2]
+      import BusseurServer.Gettext
     end
   end
 
